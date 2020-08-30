@@ -17,7 +17,7 @@ trainingData = ssc.textFileStream("training/").map(parse).cache()
 testData = ssc.textFileStream("testing/").map(parse)
 numFeatures = 1
 model = StreamingLinearRegressionWithSGD()
-model.setInitialWeights([0.0])
+model.setInitialWeights([1.0])
 
 model.trainOn(trainingData)
 
